@@ -1,0 +1,171 @@
+package app;
+import java.util.Scanner;
+import java.util.Arrays;
+
+/**
+ *
+ * @Giannis Pismichos
+ */
+public class App {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+     public static void main(String[] args){
+         
+           Scanner s = new Scanner(System.in);
+           char [][] Array = new char[3][3];
+           boolean flag = false;
+           int turn = 1;
+           int player1 = 0;
+           int player2 = 0;
+           int i,j;
+           for(i=0; i<3; i++)
+           {
+               for(j=0; j<3; j++)
+               {
+                   Array[i][j]= ' ';
+               }
+           }
+           
+           while (flag == false)
+           {
+               for(i=0; i<3; i++)
+           {
+               System.out.print(" | ");
+               for(j=0; j<3; j++)
+               {
+                   
+                   System.out.print(Array[i][j]+" | ");
+               }
+               
+               System.out.print("\n");
+           }
+               if (turn%2==1)
+               {
+                   System.out.println("Paizei o prwtos paixths 'O' ");
+                   System.out.println("dwse thn grammi kai thi stili ");
+                   i = s.nextInt()-1;
+                   j = s.nextInt()-1;
+                   if(Array[i][j]== ' ')
+                   {
+                       Array[i][j] = 'O';
+                   }else{
+                       System.out.println("dwse thn grammi kai thi stili  ");
+                       i = s.nextInt()-1;
+                       j = s.nextInt()-1;
+                   }
+               }
+               else
+               {
+                   System.out.println("Paizei o deuteros paixths 'X' ");
+                   System.out.println("dwse thn grammi kai thi stili ");
+                   i = s.nextInt()-1;
+                   j = s.nextInt()-1;
+                   
+                   if(Array[i][j]== ' ')
+                   {
+                       Array[i][j] = 'X';
+                   }else{
+                       System.out.println("dwse thn grammi kai thi stili ");
+                       i = s.nextInt()-1;
+                       j = s.nextInt()-1;
+                   }
+               }
+           
+           if(Array[0][0]=='O' && Array[0][1]=='O' && Array[0][2]=='O')
+           {
+               player1 = 3;
+           }
+           else if(Array[0][0]=='X' && Array[0][1]=='X' && Array[0][2]=='X')
+           {
+               player2 = 3;
+           }
+           else if(Array[1][0]=='O' && Array[1][1]=='O' && Array[1][2]=='O')
+           {
+                player1 = 3;
+           }
+           else if(Array[1][0]=='X' && Array[1][1]=='X' && Array[1][2]=='X')
+           {
+                player2 = 3;
+           }
+           else if(Array[2][0]=='O' && Array[2][1]=='O' && Array[2][2]=='O')
+           {
+                player1 = 3;
+           }
+           else if(Array[2][0]=='X' && Array[2][1]=='X' && Array[2][2]=='X')
+           {
+                player2 = 3;
+           }
+           else if(Array[0][0]=='O' && Array[1][0]=='O' && Array[2][0]=='O')
+           {
+                player1 = 3;
+           }
+           else if(Array[0][0]=='X' && Array[1][0]=='X' && Array[2][0]=='X')
+           {
+                player2 = 3;
+           }
+           else if(Array[0][1]=='O' && Array[1][1]=='O' && Array[2][1]=='O')
+           {
+                player1 = 3;
+           }
+           else if(Array[0][1]=='X' && Array[1][1]=='X' && Array[2][1]=='X')
+           {
+                player2 = 3;
+           }
+           else if(Array[0][2]=='O' && Array[1][2]=='O' && Array[2][2]=='O')
+           {
+                player1 = 3;
+           }
+           else if(Array[0][2]=='X' && Array[1][2]=='X' && Array[2][2]=='X')
+           {
+                player2 = 3;
+           }
+           else if(Array[0][0]=='O' && Array[1][1]=='O' && Array[2][2]=='O')
+           {
+               player1 = 3;
+           }
+           else if(Array[0][0]=='X' && Array[1][1]=='X' && Array[2][2]=='X')
+           {
+               player2 = 3;
+           }
+           else if(Array[0][2]=='O' && Array[1][1]=='O' && Array[2][0]=='O')
+           {
+               player1 = 3;
+           }
+           else if(Array[0][2]=='X' && Array[1][1]=='X' && Array[2][0]=='X')
+           {
+               player2 = 3;
+           }
+           
+           
+           if (player1 == 3 || player2 == 3)
+           {
+               flag = true;
+           }
+           turn += 1;
+           if (turn == 9)
+           {
+               flag = true;
+           }
+     }
+           for(i=0; i<3; i++)
+           {
+               System.out.print(" | ");
+               for(j=0; j<3; j++)
+               {
+                   System.out.print(Array[i][j]+" | ");    
+               }
+               
+               System.out.print("\n");
+           }
+     if (player1 == 3)
+     {
+        System.out.println("kerdise o prwtos paixths!");
+     }else{
+        System.out.println("kerdise o deuteros paixths!");
+     }
+}  
+}
+   
